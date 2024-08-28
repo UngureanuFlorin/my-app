@@ -1,0 +1,94 @@
+/* Stile per il container */
+.section {
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.blur {
+    width: 18%;
+}
+
+.container {
+    padding-top: 10px;
+    display: flex;
+    background-color: white;
+    gap: 25px;
+    justify-content: center;
+    /* colore di sfondo per visibilità */
+    transition: width 0.5s ease-in-out;
+    /* Aggiunge una transizione per l'espansione */
+    width: 56px;
+    /* Impostazione iniziale per il player */
+}
+
+.container.expanded {
+    width: 75%;
+    /* Imposta la larghezza finale quando l'animazione è completata */
+}
+
+/* Stile per il loader */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity)) /* #f3f4f6 */;
+    /* 75% dello spazio */
+    /* colore di sfondo per visibilità */
+    border-radius: 32px;
+}
+
+/* Stile per il player */
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* 25% dello spazio */
+    --tw-bg-opacity: 1;
+        background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+            /* #f3f4f6 */
+        ;
+    border-radius: 50%;
+    height: 56px;
+    border: none;
+}
+
+/* Stile per la barra di caricamento */
+.loading-bar {
+    width: 75%;
+    /* Larghezza della barra */
+    height: 5px;
+    border-radius: 32px;
+    /* Altezza della barra */
+    background-color: #1D1D1F;
+    transform: scaleX(0);
+    /* Inizia con la scala X a 0 (invisibile) */
+    transform-origin: left;
+    /* L'animazione parte dal lato sinistro */
+    animation: loading 3s infinite;
+    /* Anima la barra su 3 secondi */
+    bottom: 10px;
+    /* Posiziona la barra alla base del loader */
+}
+
+/* Definizione dell'animazione */
+@keyframes loading {
+    to {
+        transform: scaleX(1);
+        /* Scala la barra al 100% */
+    }
+}
+
+body {
+    height: 100vh;
+}
